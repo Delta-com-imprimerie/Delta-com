@@ -495,28 +495,53 @@ footer a:hover{color:var(--rose2)}
   .js .reveal{opacity:1}
 }
 
-/* ---------- Mise en page pleine largeur sur tout le site ---------- */
+
+/* ===== CORRECTION PLEINE LARGEUR SUR TOUT LE SITE ===== */
 html, body {
   width: 100%;
-  min-width: 0;
+  max-width: 100%;
   margin: 0;
+  padding: 0;
 }
-body { overflow-x: hidden; }
-main { display: block; width: 100%; max-width: none; }
-
-/* Les grands blocs occupent toute la largeur disponible */
-.nav,
+body, main {
+  width: 100%;
+  max-width: none;
+}
+/* Les grandes sections occupent toute la largeur disponible */
 .section,
-.container,
+.container {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* Navigation et pied de page également */
+.nav,
 .footer-grid {
   width: 100%;
   max-width: none;
 }
-.nav { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
+/* La bannière d'accueil reste bord à bord, même si un parent la contraint */
+.hero {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* Garde une marge intérieure confortable sur les grands écrans */
 .section,
-.container { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
-.footer-grid { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
-.hero { width: 100%; max-width: none; }
+.container {
+  padding-left: clamp(20px, 4vw, 64px);
+  padding-right: clamp(20px, 4vw, 64px);
+}
+.nav {
+  padding-left: clamp(20px, 4vw, 64px);
+  padding-right: clamp(20px, 4vw, 64px);
+}
+.footer-grid {
+  padding-left: clamp(20px, 4vw, 64px);
+  padding-right: clamp(20px, 4vw, 64px);
+}
 
 </style>
 </head>
