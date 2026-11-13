@@ -494,6 +494,27 @@ footer a:hover{color:var(--rose2)}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .js .reveal{opacity:1}
 }
+
+/* ---------- Corrections : pleine largeur ---------- */
+html, body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+body {
+  overflow-x: hidden;
+}
+main {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+.hero {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+}
+
 </style>
 </head>
 
@@ -1166,5 +1187,18 @@ footer a:hover{color:var(--rose2)}
   });
 })();
 </script>
+
+<script>
+/* Supprime uniquement un éventuel DOCTYPE affiché comme texte dans la page. */
+document.addEventListener('DOMContentLoaded', () => {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    if (node.nodeValue.trim() === '<!DOCTYPE html>') node.remove();
+  });
+});
+</script>
+
 </body>
 </html>
