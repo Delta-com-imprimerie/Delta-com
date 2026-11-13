@@ -496,52 +496,6 @@ footer a:hover{color:var(--rose2)}
 }
 
 
-/* ===== CORRECTION PLEINE LARGEUR SUR TOUT LE SITE ===== */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-body, main {
-  width: 100%;
-  max-width: none;
-}
-/* Les grandes sections occupent toute la largeur disponible */
-.section,
-.container {
-  width: 100%;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-}
-/* Navigation et pied de page également */
-.nav,
-.footer-grid {
-  width: 100%;
-  max-width: none;
-}
-/* La bannière d'accueil reste bord à bord, même si un parent la contraint */
-.hero {
-  width: 100%;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-}
-/* Garde une marge intérieure confortable sur les grands écrans */
-.section,
-.container {
-  padding-left: clamp(20px, 4vw, 64px);
-  padding-right: clamp(20px, 4vw, 64px);
-}
-.nav {
-  padding-left: clamp(20px, 4vw, 64px);
-  padding-right: clamp(20px, 4vw, 64px);
-}
-.footer-grid {
-  padding-left: clamp(20px, 4vw, 64px);
-  padding-right: clamp(20px, 4vw, 64px);
-}
 
 </style>
 </head>
