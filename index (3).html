@@ -495,25 +495,28 @@ footer a:hover{color:var(--rose2)}
   .js .reveal{opacity:1}
 }
 
-/* ---------- Corrections : pleine largeur ---------- */
+/* ---------- Mise en page pleine largeur sur tout le site ---------- */
 html, body {
   width: 100%;
   min-width: 0;
   margin: 0;
 }
-body {
-  overflow-x: hidden;
-}
-main {
-  display: block;
+body { overflow-x: hidden; }
+main { display: block; width: 100%; max-width: none; }
+
+/* Les grands blocs occupent toute la largeur disponible */
+.nav,
+.section,
+.container,
+.footer-grid {
   width: 100%;
   max-width: none;
 }
-.hero {
-  width: 100vw;
-  max-width: none;
-  margin-left: calc(50% - 50vw);
-}
+.nav { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
+.section,
+.container { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
+.footer-grid { padding-left: clamp(20px, 4vw, 64px); padding-right: clamp(20px, 4vw, 64px); }
+.hero { width: 100%; max-width: none; }
 
 </style>
 </head>
@@ -1187,18 +1190,5 @@ main {
   });
 })();
 </script>
-
-<script>
-/* Supprime uniquement un éventuel DOCTYPE affiché comme texte dans la page. */
-document.addEventListener('DOMContentLoaded', () => {
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-  nodes.forEach(node => {
-    if (node.nodeValue.trim() === '<!DOCTYPE html>') node.remove();
-  });
-});
-</script>
-
 </body>
 </html>
